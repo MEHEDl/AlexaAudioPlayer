@@ -23,7 +23,7 @@ const LaunchRequestHandler = {
                 })
          }
          return handlerInput.responseBuilder
-      .speak("This is a demo explaining APL for Audio by Dabble Lab")
+      .speak("<voice name='Emma'>Let's rock!</voice>")
       .addDirective({
         "type": "Alexa.Presentation.APLA.RenderDocument",
         "token": "developer-provided-string",
