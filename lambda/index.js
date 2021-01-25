@@ -11,6 +11,7 @@ const LaunchRequestHandler = {
   handle(handlerInput) {
       const backgroundAudio = Util.getS3PreSignedUrl("Media/cosmos.mp3").replace(/&/g,'&amp;');
       const voice = Util.getS3PreSignedUrl("Media/music/myLife.mp3").replace(/&/g,'&amp;');
+      const music = Util.getS3PreSignedUrl("Media/music/thinkingOutloud.mp3").replace(/&/g,'&amp;');
        if(supportsAPL(handlerInput))
         {
          {
@@ -59,7 +60,10 @@ const LaunchRequestHandler = {
     }
     else
     {
-        return handlerInput.responseBuilder.withSimpleCard().speak("APLA is not supported").getResponse();
+        // return handlerInput.responseBuilder.withSimpleCard().speak("APLA is not supported").getResponse();
+        return handlerInput.responseBuilder
+        .speak(`<audio src="${music}"/>`)
+        .getResponse();
     }
    
   },
