@@ -10,7 +10,7 @@ const LaunchRequestHandler = {
   },
   handle(handlerInput) {
       const backgroundAudio = Util.getS3PreSignedUrl("Media/cosmos.mp3").replace(/&/g,'&amp;');
-      const voice = Util.getS3PreSignedUrl("Media/voice.mp3").replace(/&/g,'&amp;');
+      const voice = Util.getS3PreSignedUrl("Media/music/Confusion.mp3").replace(/&/g,'&amp;');
        if(supportsAPL(handlerInput))
         {
          {
